@@ -97,6 +97,7 @@ def initialize_global_process_group_ray(timeout_second=None, backend=None):
             init_method=os.environ.get("DIST_INIT_METHOD", None),
         )
 
+
 def create_tcp_store(
     host: str,
     port: int,
@@ -118,6 +119,7 @@ def create_tcp_store(
     except Exception:
         socket.close(listen_fd)
         raise
+
 
 def stateless_init_process_group(master_address, master_port, rank, world_size, device):
     """
